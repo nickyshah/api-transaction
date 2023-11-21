@@ -1,0 +1,68 @@
+# API testing for our transaction history
+# Protocols: http://
+# URL : localhost
+# port: :8000
+# Path: api/v1/user or api/v1/trans
+
+@userApi = http://localhost:8000/api/v1/user
+@transApi = http://localhost:8000/api/v1/transaction
+### get api 
+
+
+# check server starus
+GET http://localhost:8000
+
+# =============== Useer Api ===================
+
+### user get api
+GET {{userApi}}
+
+
+### user post api
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": "john.doe@gmail.com",
+    "password": "pass"
+}
+
+### login 
+POST {{userApi}}/login
+Content-Type: application/json
+
+{
+    "email": "john.doe@gmail.com",
+    "password": "pass"
+}
+
+### user post api
+PUT {{userApi}}
+
+
+
+### user post api
+PATCH {{userApi}}
+
+
+### user post api
+DELETE  {{userApi}}
+
+
+# ===================Trancsation Api ==============
+
+### trans get api
+GET {{transApi}}
+
+### transa post api
+POST {{transApi}}
+Content-Type: application/json
+Authorization: 6552eef4870e3b9c0fc958f1
+
+{
+    "type": "Income",
+    "date": "2023/11/20",
+    "title": "asda",
+    "amount": "1230"
+}
