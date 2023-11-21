@@ -38,7 +38,7 @@ app.use("*", (req, res, next) =>{
 
 // error handling at one place 
 app.use((error, req, res, next)=>{
-    console.log(error);
+    
     // log  ---- 
     const erorCode = error.errorCode || 500
     res.status(erorCode).json({
@@ -53,4 +53,3 @@ app.listen(PORT, error => {
 
 
 
-console.log("Hahah")

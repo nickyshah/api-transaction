@@ -4,8 +4,6 @@ export const userAuth = async (req, res, next) => {
   
 
 // check if the user exist with the _id or not 
-// console.log(req.body)
-// console.log(req.headers)
 try {
     const {authorization} = req.headers
 

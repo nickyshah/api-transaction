@@ -8,7 +8,7 @@ import { deleteTrans } from '../module/transaction/TransModule.js'
 // ?insert transaction
 router.post("/", userAuth, async (req, res) => {
     try {
-        console.log(req.body)
+        
         const result = await insertTrans({...req.body, userId: req.userId})
 
         result?._id ? 
@@ -21,7 +21,7 @@ router.post("/", userAuth, async (req, res) => {
             message: "Unable to add the transaction, Please Try Again later",
         })
     } catch (error) {
-        console.log(error)
+        
         res.json({
             status: 'error',
             message: 'Error, Transaction cannot be added'
@@ -46,7 +46,7 @@ router.delete('/', userAuth, async (req, res, next)=> {
     // delete all transactions of a particular user
     try {
         const {userId, body} = req 
-        // console.log(req.body)
+        
         const result = await deleteTrans(userId, body)
 
         result.deletedCount ? res.json({

@@ -50,13 +50,13 @@ router.post("/", async (req, res, next) => {
 
 router.post("/login", async (req, res, next) => {
     try {
-        // console.log(req.body)
+        
         const {password, email} = req.body
-        // console.log(req.body)
+        
 
         // check if user exist for the given email 
         const result = await getUserByEmail(email)
-        // console.log(result)
+        
 
         if (result?.password) {
             // check if the plain pass and the pass from the db, the hashed one is the same 
